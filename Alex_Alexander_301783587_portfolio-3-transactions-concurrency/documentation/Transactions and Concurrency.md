@@ -284,6 +284,6 @@ The SQL examples and practical results must be reviewed, executed and verified b
 - [ ] SQL scripts committed to GitHub.
 - [ ] GitHub repository URL included.
 
-**GitHub repository:** [Insert your repository URL]
+**GitHub repository:** [(https://github.com/AlexAlexander301783587/MIT-8103-Advanced-Database-Systems.git)]
 
 **Submission:** Portfolio 3 – Transactions and Concurrency.

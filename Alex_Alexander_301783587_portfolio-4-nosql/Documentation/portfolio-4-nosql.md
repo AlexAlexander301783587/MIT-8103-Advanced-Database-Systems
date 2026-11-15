@@ -148,10 +148,12 @@ Include the following actual screenshots:
 
 **GitHub folder:** `portfolio-4-nosql/`
 
-Recommended structure:
+structure:
 
 - `screenshots/`
 - `documentation/`
 - `README.md`
+
+**GitHub repository:** [(https://github.com/AlexAlexander301783587/MIT-8103-Advanced-Database-Systems.git)]
 
 **Important:** Remove or revise any statement about successful implementation if the corresponding activity has not actually been executed and verified.

@@ -293,6 +293,7 @@ The following evidence are in the portfolio-2-query-optimisation\screenshot
 - [ ] Performance comparison and analysis.
 - [ ] SQL scripts committed to the GitHub repository.
 
-**GitHub repository:** [Insert your repository URL]
+
+**GitHub repository:** [(https://github.com/AlexAlexander301783587/MIT-8103-Advanced-Database-Systems.git)]
 
 **Submission:** Portfolio 2 – Query Processing and Optimisation.
