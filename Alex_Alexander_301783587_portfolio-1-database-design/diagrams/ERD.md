@@ -11,13 +11,13 @@ erDiagram
 
     FARM_LOCATIONS {
         INTEGER location_id PK
-        VARCHAR location_name UK
+        VARCHAR location_name UNIQUE
         TEXT description
     }
 
     EMPLOYEES {
         INTEGER employee_id PK
-        VARCHAR employee_no UK
+        VARCHAR employee_no UNIQUE
         VARCHAR first_name
         VARCHAR last_name
         INTEGER location_id FK
@@ -40,16 +40,14 @@ erDiagram
 
 ## Relationship Explanation
 
-1. FARM_LOCATIONS to EMPLOYEES: One farm location can have many employees, while each employee belongs to one current farm location.
-
-2. EMPLOYEES to ATTENDANCE: One employee can have many daily attendance records, while each attendance record belongs to one employee.
-
-3. FARM_LOCATIONS to ATTENDANCE: One farm location can be associated with many attendance records.
+1. **FARM_LOCATIONS to EMPLOYEES:** One farm location can have many employees, while each employee belongs to one current farm location.
+2. **EMPLOYEES to ATTENDANCE:** One employee can have many daily attendance records, while each attendance record belongs to one employee.
+3. **FARM_LOCATIONS to ATTENDANCE:** One farm location can be associated with many attendance records.
 
 ## Database Constraints
 
 - Primary keys uniquely identify records in each table.
 - Employee numbers are unique.
 - Each attendance record references an existing employee and farm location.
-- A unique constraint on employee_id and attendance_date prevents duplicate daily attendance records for an employee.
-- Check-out time must be later than check-in time when both values are provided.
+- A composite unique constraint on `(employee_id, attendance_date)` prevents duplicate daily attendance records for an employee.
+- Check-out time must be later than check-in time when both values are provided.eck-in time when both values are provided.
