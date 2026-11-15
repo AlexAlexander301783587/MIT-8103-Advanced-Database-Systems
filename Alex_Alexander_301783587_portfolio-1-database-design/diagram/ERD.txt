@@ -1,0 +1,55 @@
+
+# Entity Relationship Diagram (ERD)
+
+## Agricultural Workforce Attendance Management System
+
+```mermaid
+erDiagram
+    FARM_LOCATIONS ||--o{ EMPLOYEES : "has"
+    FARM_LOCATIONS ||--o{ ATTENDANCE : "records"
+    EMPLOYEES ||--o{ ATTENDANCE : "has"
+
+    FARM_LOCATIONS {
+        INTEGER location_id PK
+        VARCHAR location_name UK
+        TEXT description
+    }
+
+    EMPLOYEES {
+        INTEGER employee_id PK
+        VARCHAR employee_no UK
+        VARCHAR first_name
+        VARCHAR last_name
+        INTEGER location_id FK
+        DATE employment_date
+        VARCHAR employment_status
+        TIMESTAMPTZ created_at
+    }
+
+    ATTENDANCE {
+        INTEGER attendance_id PK
+        INTEGER employee_id FK
+        INTEGER location_id FK
+        DATE attendance_date
+        TIMESTAMPTZ check_in_time
+        TIMESTAMPTZ check_out_time
+        VARCHAR attendance_status
+        TIMESTAMPTZ recorded_at
+    }
+```
+
+## Relationship Explanation
+
+1. FARM_LOCATIONS to EMPLOYEES: One farm location can have many employees, while each employee belongs to one current farm location.
+
+2. EMPLOYEES to ATTENDANCE: One employee can have many daily attendance records, while each attendance record belongs to one employee.
+
+3. FARM_LOCATIONS to ATTENDANCE: One farm location can be associated with many attendance records.
+
+## Database Constraints
+
+- Primary keys uniquely identify records in each table.
+- Employee numbers are unique.
+- Each attendance record references an existing employee and farm location.
+- A unique constraint on employee_id and attendance_date prevents duplicate daily attendance records for an employee.
+- Check-out time must be later than check-in time when both values are provided.
